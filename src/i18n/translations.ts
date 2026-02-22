@@ -94,6 +94,7 @@ export const translations = {
       resetConfirm: "Tem certeza? Todo progresso será perdido.",
       about: "Sobre",
       privacy: "Privacidade",
+      termsOfUse: "Termos de Uso",
       version: "Versão",
     },
     levels: {
@@ -210,6 +211,7 @@ export const translations = {
       resetConfirm: "Are you sure? All progress will be lost.",
       about: "About",
       privacy: "Privacy",
+      termsOfUse: "Terms of Use",
       version: "Version",
     },
     levels: {
@@ -326,6 +328,7 @@ export const translations = {
       resetConfirm: "¿Estás seguro? Todo el progreso se perderá.",
       about: "Acerca de",
       privacy: "Privacidad",
+      termsOfUse: "Términos de Uso",
       version: "Versión",
     },
     levels: {

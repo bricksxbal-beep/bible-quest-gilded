@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Globe, Volume2, Smartphone, Moon, RotateCcw, Info, Shield } from "lucide-react";
+import { Globe, Volume2, Smartphone, Moon, RotateCcw, Info, Shield, FileText, ChevronRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { useGameState } from "@/hooks/useGameState";
 import { useTheme } from "@/hooks/useTheme";
@@ -13,6 +14,7 @@ const languages: { code: Language; label: string }[] = [
 ];
 
 export default function SettingsPage() {
+  const navigate = useNavigate();
   const { language, setLanguage, t } = useLanguage();
   const { state, updateState, resetProgress } = useGameState();
   const { isDark, toggleTheme } = useTheme();
@@ -106,11 +108,29 @@ export default function SettingsPage() {
           <span className="text-sm text-muted-foreground">{t.settings.version} 1.0.0</span>
         </div>
 
+        {/* Terms of Use */}
+        <button
+          onClick={() => navigate("/terms")}
+          className="w-full bg-card border border-border rounded-xl p-4 flex items-center justify-between"
+        >
+          <div className="flex items-center gap-3">
+            <FileText className="w-5 h-5 text-muted-foreground" />
+            <span className="font-medium">{t.settings.termsOfUse}</span>
+          </div>
+          <ChevronRight className="w-4 h-4 text-muted-foreground" />
+        </button>
+
         {/* Privacy */}
-        <div className="bg-card border border-border rounded-xl p-4 flex items-center gap-3">
-          <Shield className="w-5 h-5 text-muted-foreground" />
-          <span className="font-medium">{t.settings.privacy}</span>
-        </div>
+        <button
+          onClick={() => navigate("/privacy")}
+          className="w-full bg-card border border-border rounded-xl p-4 flex items-center justify-between"
+        >
+          <div className="flex items-center gap-3">
+            <Shield className="w-5 h-5 text-muted-foreground" />
+            <span className="font-medium">{t.settings.privacy}</span>
+          </div>
+          <ChevronRight className="w-4 h-4 text-muted-foreground" />
+        </button>
       </div>
     </motion.div>
   );
