@@ -21,10 +21,10 @@ export default function QuizPlay() {
 
   const quizQuestions = useMemo(() => {
     const filtered = questions.filter(
-      (q) => q.category === category && q.difficulty === difficulty
+      (q) => q.category === category
     );
-    return filtered.sort(() => Math.random() - 0.5).slice(0, 10);
-  }, [category, difficulty]);
+    return filtered.sort(() => Math.random() - 0.5).slice(0, 8);
+  }, [category]);
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
