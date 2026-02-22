@@ -12,6 +12,8 @@ import QuizResults from "./pages/QuizResults";
 import Stats from "./pages/Stats";
 import Profile from "./pages/Profile";
 import SettingsPage from "./pages/SettingsPage";
+import TermsOfUse from "./pages/TermsOfUse";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Onboarding from "./pages/Onboarding";
 import NotFound from "./pages/NotFound";
 import { useState } from "react";
@@ -49,6 +51,8 @@ function AppRoutes() {
           <Route path="/stats" element={<Stats />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/settings" element={<SettingsPage />} />
+          <Route path="/terms" element={<TermsOfUse />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
